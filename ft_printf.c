@@ -1,0 +1,45 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pbourdon <pbourdon@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/03/14 14:09:47 by pbourdon          #+#    #+#             */
+/*   Updated: 2016/03/14 16:34:32 by pbourdon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libprintf.h"
+
+int		ft_printf(const char *format, ...)
+{
+	int			index;
+	va_list		ap;
+	t_arg		arg;
+
+	ft_init_struct(&arg);
+	va_start(ap, format);
+	index = 0;
+	while (format[index] != '\0')
+	{
+		if (format[index == '%'])
+			ft_choose(ap, format, &index, &arg);
+		else
+			ft_putchar(format[index], &arg);
+		index++;
+	}
+	/*
+	printf("%d is arg_flag0\n", arg.flag0);
+	printf("%d is arg_flag sharp\n", arg.flag_sharp);
+	printf("%d is arg_flag less\n", arg.flag_less);
+	printf("%d is arg_flag more\n", arg.flag_more);
+	printf("%d is arg_second_flag\n", arg.second_flag);
+	printf("%d is arg_space\n", arg.flag_space);
+	printf("%d is arg_is_width\n", arg.is_width);
+	printf("%d is arg_width\n", arg.width);
+	printf("%d is the second_flag\n", arg.second_flag);
+	*/
+	va_end(ap);
+	return (ft_retur(&arg));
+}
