@@ -42,9 +42,9 @@ int		ft_choose(va_list ap, const char *format, int *index, t_arg *arg);
 int		ft_choose2(va_list ap, const char *format, int *index, t_arg *arg);
 int		ft_choose3(va_list ap, const char *format, int *index, t_arg *arg);
 int		ft_choose4(va_list ap, const char *format, int *index, t_arg *arg);
-int		ft_choose_type(va_list ap, const char *format, int *index, t_arg *arg);
-// int		ft_choose3(va_list ap, const char *format, int *index, t_arg *arg);
+int		ft_choose5(va_list ap, const char *format, int *index, t_arg *arg);
 
+int		ft_choose_type(va_list ap, const char *format, int *index, t_arg *arg);
 void	ft_printf_percent(t_arg *arg);
 int		ft_printf_str(va_list ap, t_arg *arg);
 void	ft_putstr(char *str, t_arg *arg);

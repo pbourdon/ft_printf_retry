@@ -24,12 +24,14 @@ int		ft_printf(const char *format, ...)
 	while (format[index] != '\0')
 	{
 		if (format[index == '%'])
+		{
+			index++;
 			ft_choose(ap, format, &index, &arg);
+		}	
 		else
 			ft_putchar(format[index], &arg);
 		index++;
 	}
-	/*
 	printf("%d is arg_flag0\n", arg.flag0);
 	printf("%d is arg_flag sharp\n", arg.flag_sharp);
 	printf("%d is arg_flag less\n", arg.flag_less);
@@ -39,7 +41,6 @@ int		ft_printf(const char *format, ...)
 	printf("%d is arg_is_width\n", arg.is_width);
 	printf("%d is arg_width\n", arg.width);
 	printf("%d is the second_flag\n", arg.second_flag);
-	*/
 	va_end(ap);
 	return (ft_retur(&arg));
 }

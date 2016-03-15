@@ -15,11 +15,10 @@
 int		ft_printf_str(va_list ap, t_arg *arg)
 {
 	char	*str;
-	int		index;
-	int		precision;
+//	int		index;
 
 	str = va_arg(ap, char*);
-	index = 0;
+//	index = 0;
 	if (str == NULL)
 	{
 		ft_putstr("(null)", arg);

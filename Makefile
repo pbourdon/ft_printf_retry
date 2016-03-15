@@ -21,7 +21,7 @@ OBJ			=	$(SRC:.c=.o)
 OBJS		=	$(OBJ:%=$(DIROBJ)%)
 
 CC			=	/usr/bin/gcc
-CFLAGS		=#	-Werror -Wall -Wextra
+CFLAGS		=	-Werror -Wall -Wextra
 RM			=	/bin/rm -f
 DELETE		=	/bin/rm -f *~ .*
 ECHO		=	/bin/echo -e
