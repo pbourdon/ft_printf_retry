@@ -45,7 +45,7 @@ int		ft_choose3(va_list ap, const char *format, int *index, t_arg *arg)
 	if (format[*index] > '0' && format[*index] <= '9')
 	{
 		arg->is_width = 1;
-		arg->width = format[*index];
+		arg->width = format[*index] - '0';
 		*index = *index + 1;
 		while (format[*index] >= '0' && format[*index] <= '9')
 		{
@@ -56,6 +56,7 @@ int		ft_choose3(va_list ap, const char *format, int *index, t_arg *arg)
 	}
 	if (format[*index] == '.')
 	{
+		*index = *index + 1;
 		while (format[*index] >= '0' && format[*index] <= '9')
 		{
 			arg->is_precision = 1;
@@ -69,29 +70,37 @@ int		ft_choose3(va_list ap, const char *format, int *index, t_arg *arg)
 
 int		ft_choose4(va_list ap, const char *format, int *index, t_arg *arg)
 {
-	if (format[*index] == 'h' && format[*index + 1] == 'h')
+	int		index2;
+
+	index2 = 0;
+	while (format[index2] != '\0')
+		index2++;
+	if (index2 > *index) // to handle the beug from arg->second_flag = 3 
 	{
-		arg->second_flag = 1;
-		*index = *index + 1;
-		return (ft_choose(ap, format, index, arg));
+		if (format[*index] == 'l' && format[*index + 1] == 'l')
+		{
+			arg->second_flag = 3;
+			*index = *index + 1;
+			return (ft_choose(ap, format, index, arg));
+		}
+		if (format[*index] == 'h' && format[*index + 1] == 'h')
+		{
+			arg->second_flag = 1;
+			*index = *index + 1;
+			return (ft_choose(ap, format, index, arg));
+		}
 	}
+	return (ft_choose5(ap, format, index, arg));
+}
+
+int		ft_choose5(va_list ap, const char *format, int *index, t_arg *arg)
+{
 	if (format[*index] == 'h')
 	{
 		arg->second_flag = 2;
 		*index = *index + 1;
 		return (ft_choose(ap, format, index, arg));
 	}
-	if (format[*index] == 108 && format[*index + 1] == 108)
-	{
-	//	printf ("here");
-		arg->second_flag = 3;
-		*index = *index + 1;
-		return (ft_choose(ap, format, index, arg));
-	}
-	return (0);
-}
-int		ft_choose5(va_list ap, const char *format, int *index, t_arg *arg)
-{
 	if (format[*index] == 'l')
 	{
 		arg->second_flag = 4;
@@ -110,5 +119,5 @@ int		ft_choose5(va_list ap, const char *format, int *index, t_arg *arg)
 		*index = *index + 1;
 		return (ft_choose(ap, format, index, arg));
 	}
-	return (0);
+	return (ft_choose_type(ap, format, index. arg));
 }

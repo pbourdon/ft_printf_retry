@@ -14,8 +14,8 @@
 
 int		main(void)
 {
-	ft_printf("%+-");
+	ft_printf("%%");
 	printf("\n");
-//	printf("%5%");
+//	printf("%.0001d", 10);
 	return (0);
 }

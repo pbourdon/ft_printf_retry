@@ -51,5 +51,4 @@ void	ft_putstr(char *str, t_arg *arg);
 void	ft_init_struct(t_arg *arg);
 int		ft_retur(t_arg *arg);
 int		ft_strlen(char *str);
-
 #endif

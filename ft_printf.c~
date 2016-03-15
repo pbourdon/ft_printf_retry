@@ -40,8 +40,7 @@ int		ft_printf(const char *format, ...)
 	printf("%d is arg_space\n", arg.flag_space);
 	printf("%d is arg_is_width\n", arg.is_width);
 	printf("%d is arg_width\n", arg.width);
-	printf("%d is the is_precision\n", arg.is_precision);
-	printf("%d is the precision\n", arg.precision);
+	printf("%d is the second_flag\n", arg.second_flag);
 	va_end(ap);
 	return (ft_retur(&arg));
 }
