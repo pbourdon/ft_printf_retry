@@ -32,6 +32,7 @@ int		ft_printf(const char *format, ...)
 			ft_putchar(format[index], &arg);
 		index++;
 	}
+	printf("\n");
 	printf("%d is arg_flag0\n", arg.flag0);
 	printf("%d is arg_flag sharp\n", arg.flag_sharp);
 	printf("%d is arg_flag less\n", arg.flag_less);

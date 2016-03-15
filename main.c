@@ -14,7 +14,7 @@
 
 int		main(void)
 {
-	ft_printf("%%");
+	ft_printf("%+-l");
 	printf("\n");
 //	printf("%.0001d", 10);
 	return (0);
