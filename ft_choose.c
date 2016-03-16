@@ -4,8 +4,6 @@ int		ft_choose(va_list ap, const char *format, int *index, t_arg *arg)
 {
 	while (*index <= arg->position)
 	{
-		if (format[*index] == '\0')
-			return (0);
 		if (format[*index] == '#')
 		{
 			*index = *index + 1;
@@ -37,7 +35,7 @@ int		ft_choose2(va_list ap, const char *format, int *index, t_arg *arg)
 		{
 			*index = *index + 1;
 			arg->flag_space = 1;
-			return(ft_choose(ap, format, index, arg));
+			return (ft_choose(ap, format, index, arg));
 		}
 		else if (format[*index] == '0' && format[*index - 1] != '.')
 		{
@@ -57,8 +55,6 @@ int		ft_choose3(va_list ap, const char *format, int *index, t_arg *arg)
 		if (format[*index] > '0' && format[*index] <= '9')
 		{
 			arg->is_width = 1;
-			arg->width = format[*index] - '0';
-			*index = *index + 1;
 			while (format[*index] >= '0' && format[*index] <= '9')
 			{
 				arg->width = arg->width * 10 + format[*index] - '0';
@@ -67,14 +63,11 @@ int		ft_choose3(va_list ap, const char *format, int *index, t_arg *arg)
 			return (ft_choose(ap, format, index, arg));
 		}
 		else if (format[*index] == '.')
+			ft_choose3_bis(ap, format, index, arg);
+		else if (format[*index] == 'j')
 		{
+			arg->second_flag = 5;
 			*index = *index + 1;
-			while (format[*index] >= '0' && format[*index] <= '9')
-			{
-				arg->is_precision = 1;
-				arg->precision = arg->precision * 10 + format[*index] - '0';
-				*index = *index + 1;
-			}
 			return (ft_choose(ap, format, index, arg));
 		}
 		return (ft_choose4(ap, format, index, arg));
@@ -118,18 +111,6 @@ int		ft_choose5(va_list ap, const char *format, int *index, t_arg *arg)
 		else if (format[*index] == 'l' && arg->doubble != 1)
 		{
 			arg->second_flag = 4;
-			*index = *index + 1;
-			return (ft_choose(ap, format, index, arg));
-		}
-		else if (format[*index] == 'j')
-		{
-			arg->second_flag = 5;
-			*index = *index + 1;
-			return (ft_choose(ap, format, index, arg));
-		}
-		else if (format[*index] == 'z')
-		{
-			arg->second_flag = 6;
 			*index = *index + 1;
 			return (ft_choose(ap, format, index, arg));
 		}

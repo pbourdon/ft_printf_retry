@@ -6,7 +6,7 @@
 /*   By: pbourdon <pbourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 14:48:56 by pbourdon          #+#    #+#             */
-/*   Updated: 2016/03/16 02:40:50 by pbourdon         ###   ########.fr       */
+/*   Updated: 2016/03/16 05:30:28 by pbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 int		main(void)
 {
-	ft_printf("%   %");
+	ft_printf("%-10s", "this");
+//	ft_printf("%-10s%s%.1s%s%s", "this", "is", "aaaaa", "multi", "string");
 	printf("\n");
-	printf("%   %");
-	return (0);
+	printf("%-10s", "this");
+//	printf("%-10s%s%.1s%s%s", "this", "is", "aaaaa", "multi", "string");
+		return (0);
 }

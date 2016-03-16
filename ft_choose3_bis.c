@@ -1,41 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_percent.c                                :+:      :+:    :+:   */
+/*   ft_choose3_bis.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbourdon <pbourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/14 16:32:58 by pbourdon          #+#    #+#             */
-/*   Updated: 2016/03/16 02:53:52 by pbourdon         ###   ########.fr       */
+/*   Created: 2016/03/16 02:54:02 by pbourdon          #+#    #+#             */
+/*   Updated: 2016/03/16 03:01:10 by pbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libprintf.h"
 
-int		ft_printf_percent(t_arg *arg)
+int		ft_choose3_bis(va_list ap, const char* format, int *index, t_arg *arg)
 {
-	int		index2;
-
-	index2 = 0;
-	if (arg->is_width == 1 && arg->flag_less == 1)
+	*index = *index + 1;
+	while (format[*index] >= '0' && format[*index] <= '9')
 	{
-		ft_putchar('%', arg);
-		while (index2++ < arg->width - 1)
-		{
-			ft_putchar(arg->prefix, arg);
-		}
+		arg->is_precision = 1;
+		arg->precision = arg->precision * 10 + format[*index] - '0';
+		*index = *index + 1;
 	}
-	else if (arg->is_width == 1)
-	{
-		while (index2 < arg->width - 1)
-		{
-			ft_putchar(arg->prefix, arg);
-			index2++;
-		}
-		ft_putchar('%', arg);
-	}
-	else
-		ft_putchar('%', arg);
-	ft_init_struct(arg, arg->position);
-	return (0);
+	return (ft_choose(ap, format, index, arg));
 }

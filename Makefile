@@ -7,6 +7,7 @@ INC_LIB		=	# -L./path/to/lib/directorie -lname
 SRC		=	ft_printf.c\
 			main.c\
 			ft_choose.c\
+			ft_choose3_bis.c\
 			ft_putchar.c\
 			ft_init_struct.c\
 			ft_retur.c\
@@ -14,6 +15,7 @@ SRC		=	ft_printf.c\
 			ft_printf_percent.c\
 			ft_printf_str.c\
 			ft_putstr.c\
+			ft_strlen.c\
 
 
 

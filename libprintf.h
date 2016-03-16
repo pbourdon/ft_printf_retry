@@ -6,7 +6,7 @@
 /*   By: pbourdon <pbourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 14:06:57 by pbourdon          #+#    #+#             */
-/*   Updated: 2016/03/16 02:39:54 by pbourdon         ###   ########.fr       */
+/*   Updated: 2016/03/16 02:58:23 by pbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	ft_putchar(char c, t_arg *arg);
 int		ft_choose(va_list ap, const char *format, int *index, t_arg *arg);
 int		ft_choose2(va_list ap, const char *format, int *index, t_arg *arg);
 int		ft_choose3(va_list ap, const char *format, int *index, t_arg *arg);
+int		ft_choose3_bis(va_list ap, const char *format, int *index, t_arg *arg);
 int		ft_choose4(va_list ap, const char *format, int *index, t_arg *arg);
 int		ft_choose5(va_list ap, const char *format, int *index, t_arg *arg);
 
