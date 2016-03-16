@@ -6,7 +6,7 @@
 /*   By: pbourdon <pbourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 14:48:56 by pbourdon          #+#    #+#             */
-/*   Updated: 2016/03/14 17:05:36 by pbourdon         ###   ########.fr       */
+/*   Updated: 2016/03/16 02:40:50 by pbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int		main(void)
 {
-	ft_printf("%+-l");
+	ft_printf("%   %");
 	printf("\n");
-//	printf("%.0001d", 10);
+	printf("%   %");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: pbourdon <pbourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 14:06:57 by pbourdon          #+#    #+#             */
-/*   Updated: 2016/03/14 16:42:58 by pbourdon         ###   ########.fr       */
+/*   Updated: 2016/03/16 02:39:54 by pbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ typedef struct			s_yolo
 	int					precision;
 	char				prefix;
 	int					retur;
+	int					position;
+	int					doubble;
 }						t_arg;
 
 int		ft_printf(const char *format, ...);
@@ -45,10 +47,10 @@ int		ft_choose4(va_list ap, const char *format, int *index, t_arg *arg);
 int		ft_choose5(va_list ap, const char *format, int *index, t_arg *arg);
 
 int		ft_choose_type(va_list ap, const char *format, int *index, t_arg *arg);
-void	ft_printf_percent(t_arg *arg);
+int		ft_printf_percent(t_arg *arg);
 int		ft_printf_str(va_list ap, t_arg *arg);
 void	ft_putstr(char *str, t_arg *arg);
-void	ft_init_struct(t_arg *arg);
+void	ft_init_struct(t_arg *arg, int index);
 int		ft_retur(t_arg *arg);
 int		ft_strlen(char *str);
 

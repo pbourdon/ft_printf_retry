@@ -1,4 +1,4 @@
-NAME		=	aaaa # Binary name
+NAME		=	Aaaa # Binary name
 DIRSRC		=	. # ./path/to/sources/directorie/
 DIROBJ		=	. # ./path/to/object/directorie/
 INCLUDE		=	. # ./path/to/include/directorie/

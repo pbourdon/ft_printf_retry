@@ -6,7 +6,7 @@
 /*   By: pbourdon <pbourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:15:32 by pbourdon          #+#    #+#             */
-/*   Updated: 2016/03/14 17:05:08 by pbourdon         ###   ########.fr       */
+/*   Updated: 2016/03/16 02:22:50 by pbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int		ft_choose_type(va_list ap, const char *format, int *index, t_arg *arg)
 {
-//	printf ("here");
 	if (format[*index] == '%')
 	{
 		*index = *index + 1;

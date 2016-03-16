@@ -6,13 +6,13 @@
 /*   By: pbourdon <pbourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 14:27:17 by pbourdon          #+#    #+#             */
-/*   Updated: 2016/03/14 15:23:34 by pbourdon         ###   ########.fr       */
+/*   Updated: 2016/03/16 02:24:38 by pbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libprintf.h"
 
-void	ft_init_struct(t_arg *arg)
+void	ft_init_struct(t_arg *arg, int index)
 {
 	arg->flag_sharp = 0;
 	arg->flag_less = 0;
@@ -26,4 +26,6 @@ void	ft_init_struct(t_arg *arg)
 	arg->precision = 0;
 	arg->prefix = ' ';
 	arg->retur = 0;
+	arg->position = index;
+	arg->doubble = 0;
 }
