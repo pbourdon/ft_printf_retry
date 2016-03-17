@@ -32,7 +32,7 @@ int		ft_printf_str(va_list ap, t_arg *arg)
 			while (arg->width-- - len > 0)
 				ft_putchar(arg->prefix, arg);
 		if (arg->is_width && arg->width > precision && len > precision)
-			while (arg->width-- - precision >0)
+			while (arg->width-- - precision > 0)
 				ft_putchar(arg->prefix, arg);
 		ft_init_struct(arg, arg->position);
 		return (0);

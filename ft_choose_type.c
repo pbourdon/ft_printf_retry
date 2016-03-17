@@ -29,5 +29,10 @@ int		ft_choose_type(va_list ap, const char *format, int *index, t_arg *arg)
 		*index = *index + 1;
 		return (ft_printf_char(ap, arg));
 	}
+	else if (format[*index] == 'x')
+	{
+		*index = *index + 1;
+		return (ft_printf_hexa(ap, arg));
+	}
 	return (0);
 }

@@ -17,6 +17,12 @@ SRC		=	ft_printf.c\
 			ft_putstr.c\
 			ft_strlen.c\
 			ft_printf_char.c\
+			ft_printf_hexa.c\
+			ft_base_converter.c\
+			ft_strnew.c\
+			ft_memalloc.c\
+			ft_bzero.c\
+			ft_memset.c\
 
 
 

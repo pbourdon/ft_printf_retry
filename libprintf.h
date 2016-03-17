@@ -42,9 +42,16 @@ int		ft_printf(const char *format, ...);
 void	ft_putchar(char c, t_arg *arg);
 int		ft_strlen(char *str);
 void	ft_putstr(char *str, t_arg *arg);
+char	*ft_strnew(size_t size);
+void	*ft_memalloc(size_t size);
+void	ft_bzero(void *string, size_t len);
+void	*ft_memset(void *destinataire, int int_value, size_t len);
 
 void	ft_init_struct(t_arg *arg, int index);
 int		ft_retur(t_arg *arg);
+char	*ft_base_converter(int nbr, int base, int lower);
+char	*ft_base_converter2(int nbr, int base, char *result, char c);
+char	*ft_reverse_return(char *str);
 
 int		ft_choose(va_list ap, const char *format, int *index, t_arg *arg);
 int		ft_choose2(va_list ap, const char *format, int *index, t_arg *arg);
@@ -63,4 +70,6 @@ int		ft_printf_str3(t_arg *arg, char *str);
 
 int		ft_printf_char(va_list ap, t_arg *arg);
 
+int		ft_printf_hexa(va_list ap, t_arg *arg);
+int		ft_printf_display_hexa(char *str, t_arg *arg);
 #endif
