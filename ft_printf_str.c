@@ -23,7 +23,7 @@ int		ft_printf_str(va_list ap, t_arg *arg)
 	len = ft_strlen(str);
 	precision = arg->precision;
 	index = 0;
-	if (arg->is_precision == 1 && arg->flag_less == 1)
+	if (arg->is_precision == 1 && arg->flag_less == 1 && arg->precision > 0)
 	{
 		while (arg->precision-- > 0 && len-- > 0)
 			ft_putchar(str[index++], arg);
@@ -47,7 +47,7 @@ int		ft_printf_str2(t_arg *arg, int index, char *str)
 
 	precision = arg->precision;
 	len = ft_strlen(str);
-	if (arg->is_precision == 1 && arg->flag_less != 1)
+	if (arg->is_precision == 1 && arg->flag_less != 1 && arg->precision > 0)
 	{
 		if (arg->is_width && arg->width > len && len < precision)
 			while (arg->width-- - len > 0)
@@ -84,7 +84,7 @@ int		ft_printf_str3(t_arg *arg, char *str)
 		ft_init_struct(arg, arg->position);
 		return (0);
 	}
-	else
+	else if ((arg->is_precision == 1 && arg->precision != 0) || arg->is_precision == 0)
 		ft_putstr(str, arg);
 	ft_init_struct(arg, arg->position);
 	return (0);

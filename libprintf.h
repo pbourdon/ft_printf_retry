@@ -40,6 +40,12 @@ typedef struct			s_yolo
 
 int		ft_printf(const char *format, ...);
 void	ft_putchar(char c, t_arg *arg);
+int		ft_strlen(char *str);
+void	ft_putstr(char *str, t_arg *arg);
+
+void	ft_init_struct(t_arg *arg, int index);
+int		ft_retur(t_arg *arg);
+
 int		ft_choose(va_list ap, const char *format, int *index, t_arg *arg);
 int		ft_choose2(va_list ap, const char *format, int *index, t_arg *arg);
 int		ft_choose3(va_list ap, const char *format, int *index, t_arg *arg);
@@ -48,13 +54,13 @@ int		ft_choose4(va_list ap, const char *format, int *index, t_arg *arg);
 int		ft_choose5(va_list ap, const char *format, int *index, t_arg *arg);
 
 int		ft_choose_type(va_list ap, const char *format, int *index, t_arg *arg);
+
 int		ft_printf_percent(t_arg *arg);
+
 int		ft_printf_str(va_list ap, t_arg *arg);
 int		ft_printf_str2(t_arg *arg, int index, char *str);
 int		ft_printf_str3(t_arg *arg, char *str);
-void	ft_putstr(char *str, t_arg *arg);
-void	ft_init_struct(t_arg *arg, int index);
-int		ft_retur(t_arg *arg);
-int		ft_strlen(char *str);
+
+//int		ft_printf_char(va_list ap, t_arg *arg);
 
 #endif

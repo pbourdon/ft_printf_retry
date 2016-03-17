@@ -21,9 +21,15 @@ int		ft_choose_type(va_list ap, const char *format, int *index, t_arg *arg)
 	}
 	else if (format[*index] == 's')
 	{
-	//	ft_putchar('d', arg);
 		*index = *index + 1;
 		return (ft_printf_str(ap, arg));
 	}
+	/*
+	else if (format[*index] == 'c')
+	{
+		*index = *index + 1;
+		return (ft_printf_char(ap, arg));
+	}
+	*/
 	return (0);
 }

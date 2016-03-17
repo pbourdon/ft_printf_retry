@@ -18,10 +18,10 @@ int		ft_choose3_bis(va_list ap, const char* format, int *index, t_arg *arg)
 	{
 		if (format[*index] == '.')
 		{
+			arg->is_precision = 1;
 			*index = *index + 1;
 			while (format[*index] >= '0' && format[*index] <= '9')
 			{
-				arg->is_precision = 1;
 				arg->precision = arg->precision * 10 + format[*index] - '0';
 				*index = *index + 1;
 			}
