@@ -16,10 +16,10 @@ int		main(void)
 {
 //	ft_printf("%.1s", "string");
 //	ft_printf("%-10s%s%.1s%s", "this", "this", "this", "this");
-	ft_printf("%-10s%s%.1s%s%s", "thisis", "is", "aaaaa", "multi", "string");
+	ft_printf("%-10s%-14.2s%.1s%s%s", "this", "is", "aaaaa", "multi", "string");
 	printf("\n");
 	//printf ("%.1s", "string");
 //	printf("%-10s%s%.1s%s", "this", "this", "this", "this");
-	printf("%-10s%s%.1s%s%s", "this", "is", "aaaaa", "multi", "string");
+	printf("%-10s%-14.2s%.1s%s%s", "this", "this", "this", "this", "this");
 		return (0);
 }

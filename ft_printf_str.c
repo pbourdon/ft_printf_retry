@@ -37,7 +37,17 @@ int		ft_printf_str(va_list ap, t_arg *arg)
 		ft_init_struct(arg, arg->position);
 		return (0);
 	}
-	else if (arg->is_precision == 1 && arg->flag_less != 1)
+	return (ft_printf_str2(arg, index, str));
+}
+
+int		ft_printf_str2(t_arg *arg, int index, char *str)
+{
+	int		precision;
+	int		len;
+
+	precision = arg->precision;
+	len = ft_strlen(str);
+	if (arg->is_precision == 1 && arg->flag_less != 1)
 	{
 		if (arg->is_width && arg->width > len && len < precision)
 			while (arg->width-- - len > 0)
@@ -50,7 +60,15 @@ int		ft_printf_str(va_list ap, t_arg *arg)
 		ft_init_struct(arg, arg->position);
 		return (0);
 	}
-	else if (arg->flag_less != 1 && arg->is_width == 1)
+	return (ft_printf_str3(arg, str));
+}
+
+int		ft_printf_str3(t_arg *arg, char *str)
+{
+	int		len;
+
+	len = ft_strlen(str);
+	if (arg->flag_less != 1 && arg->is_width == 1)
 	{
 		while (arg->width-- - len > 0)
 			ft_putchar(arg->prefix, arg);
@@ -69,5 +87,5 @@ int		ft_printf_str(va_list ap, t_arg *arg)
 	else
 		ft_putstr(str, arg);
 	ft_init_struct(arg, arg->position);
-	return (0); // need to handle that 
+	return (0);
 }
