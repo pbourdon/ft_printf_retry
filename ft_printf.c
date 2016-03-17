@@ -34,7 +34,9 @@ int		ft_printf(const char *format, ...)
 			index--;
 		}
 		else
+		{
 			ft_putchar(format[index], &arg);
+		}
 	}
 	
 	printf("\n");

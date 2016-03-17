@@ -62,15 +62,29 @@ int		ft_choose3(va_list ap, const char *format, int *index, t_arg *arg)
 			}
 			return (ft_choose(ap, format, index, arg));
 		}
+		/*
 		else if (format[*index] == '.')
+		{
 			ft_choose3_bis(ap, format, index, arg);
+			
+			*index = *index + 1;
+			while (format[*index] >= '0' && format[*index] <= '9')
+			{
+				arg->is_precision = 1;
+				arg->precision = arg->precision * 10 + format[*index] - '0';
+				*index = *index + 1;
+			}
+			return (ft_choose(ap, format, index, arg));
+			
+		}
+	*/
 		else if (format[*index] == 'j')
 		{
 			arg->second_flag = 5;
 			*index = *index + 1;
 			return (ft_choose(ap, format, index, arg));
 		}
-		return (ft_choose4(ap, format, index, arg));
+		return (ft_choose3_bis(ap, format, index, arg));
 	}
 	return (0);
 }
