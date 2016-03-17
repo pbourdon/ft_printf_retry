@@ -61,6 +61,6 @@ int		ft_printf_str(va_list ap, t_arg *arg);
 int		ft_printf_str2(t_arg *arg, int index, char *str);
 int		ft_printf_str3(t_arg *arg, char *str);
 
-//int		ft_printf_char(va_list ap, t_arg *arg);
+int		ft_printf_char(va_list ap, t_arg *arg);
 
 #endif

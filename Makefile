@@ -16,7 +16,7 @@ SRC		=	ft_printf.c\
 			ft_printf_str.c\
 			ft_putstr.c\
 			ft_strlen.c\
-			#ft_printf_char.c\
+			ft_printf_char.c\
 
 
 
